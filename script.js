@@ -24,7 +24,7 @@ fetch("http://localhost:3000/reviews")
     });
   })
   .catch(err => {
-    console.error("Erro ao buscar reviews:", err);
+    console.error("Não temos avaliações", err);
   });
 =======
 var btn = document.getElementById("btn");
@@ -33,7 +33,8 @@ btn.addEventListener("click", function () {
   window.location.href = "https://wa.me/message/MY4J7OB6I6MIE1";
 });
 
-fetch("http://localhost:3000/reviews")
+fetch("https://pulseweb-site.onrender.com/reviews")
+
   .then(res => res.json())
   .then(reviews => {
     const container = document.getElementById("google-reviews");
