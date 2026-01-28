@@ -1,20 +1,19 @@
-<<<<<<< HEAD
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 html, body {
-  margin: 0;
+  width: 100%;
   min-height: 100%;
   background: #000;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   position: relative;
   width: 100%;
@@ -33,22 +32,16 @@ html, body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 160px; /* controla a suavidade */
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0),
-    #05070c
-  );
+  height: 160px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #05070c);
 }
 
-/* FUNDO TRAVADO */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-
   background:
     linear-gradient(
       to right,
@@ -58,40 +51,32 @@ html, body {
       rgba(8,10,18,0) 85%
     ),
     url("assets/teste3.jpg") center center no-repeat;
-
   background-size: cover;
 }
 
-/* CONTEÚDO LIVRE */
+/* HERO CONTENT */
 .hero-content {
   position: relative;
   z-index: 1;
-
   max-width: 650px;
   width: 100%;
-
-  transform: translateY(-20px); /* AQUI você ajusta o texto */
+  transform: translateY(-20px);
 }
 
-/* BEM-VINDO */
 .welcome {
-  display: block;
   font-size: 12px;
   letter-spacing: 4px;
   color: #3B82F6;
   margin-bottom: 14px;
 }
 
-/* TÍTULO */
 .hero h1 {
   font-size: 45px;
   line-height: 1.2;
-  color: #FFFFFF;
+  color: #fff;
   font-weight: 700;
-
 }
 
-/* DESTAQUE */
 .hero h1 .highlight {
   display: block;
   margin-top: 10px;
@@ -99,110 +84,74 @@ html, body {
   font-size: 45px;
 }
 
-/* TEXTO */
 .hero p {
   margin-top: 16px;
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   line-height: 1.6;
   max-width: 520px;
 }
 
-/* BOTÃO */
 .hero button {
- background-color: rgba(0, 0, 0, 0.585);
- color : #fff;
- padding: 10px 20px;
- border-radius: 10px;
- border: none;
- cursor: pointer;
- margin-top: 20px;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
+/* ================= MOTIVOS ================= */
 .motivos {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 200px;
   color: white;
-  background-color: hsl(0, 0%, 0%);
-
+  background: #000;
 }
 
 .motivo {
   display: flex;
-  flex-direction: column; /* imagem em cima, texto embaixo */
+  flex-direction: column;
   align-items: center;
   text-align: center;
   font-size: 16px;
   max-width: 220px;
-  background-image: linear-gradient(to top,#2564eb, rgb(0, 0, 0));
+  background-image: linear-gradient(to top,#2564eb, #000);
   border-radius: 10px;
+}
+
+.motivo img {
+  width: 320px;
+  height: auto;
+  margin-bottom: 12px;
 }
 
 .descricao {
   font-size: 20px;
 }
 
-.icon-box{
-  background-size: auto;
-  height: auto;
-  width: auto;
-  margin: bottom 12px;
-}
-
-.motivo img {
-  width: 320px;   /* 👈 CONTROLA O TAMANHO DA IMAGEM */
-  height: auto;
-  margin-bottom: 12px;
-  align-items: center;
-  text-align: center;
-}
-
-/* ================= SOBRE NÓS ================= */
-
+/* ================= SOBRE ================= */
 .sobre-section {
   position: relative;
-  width: 100%;
-  margin-top: 160px;
+  min-height: 160vh;
   padding: 140px 0;
+  background-image: url("/assets/teste02.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 15%;
   overflow: hidden;
 }
 
-
-.sobre-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 65%;
-  height: 100%;
-
-  background: linear-gradient(
-    to right,
-    rgba(5,7,12,0) 0%,
-    rgba(5,7,12,0.0) 10%,
-    rgba(5, 7, 12, 0) 35%,
-    rgba(5, 7, 12, 0) 65%,
-    rgba(5, 7, 12, 0) 100%
-  );
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-
-
 .sobre-container {
   max-width: 760px;
-  margin-left: auto;     /* bloco vai pra direita */
+  margin-left: auto;
   margin-right: 8%;
-
   display: flex;
   flex-direction: column;
   gap: 28px;
-
-  text-align: left;      /* 🔥 ESSENCIAL */
 }
 
 .sobre-nos {
@@ -212,54 +161,21 @@ html, body {
   text-transform: uppercase;
 }
 
-/* TEXTO BRANCO */
 .pt1 {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 800;
-  line-height: 1.15;
-  color: #ffffff;
+  color: #fff;
 }
 
-/* TEXTO ROXO */
 .pt2 {
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 800;
-  line-height: 1.15;
   color: #2564eb;
 }
 
-.sobre-section {
-  position: relative;
-  min-height: 160vh;          /* 👈 MAIS ALTA QUE A TELA */
-  padding: 140px 0;
-
-  background-image: url("/assets/teste02.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  /* 👇 ISSO É A CHAVE */
-  background-position: center 15%;
-
-  overflow: hidden;
-}
 /* ================= AVALIAÇÕES ================= */
-
 .avaliacoes {
-  position: relative;
   padding: 160px 0;
-  background: transparent;
-  overflow: hidden;
-}
-
-.avaliacoes::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 160px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0), #000);
-  pointer-events: none;
 }
 
 .avaliacoes-container {
@@ -282,45 +198,20 @@ html, body {
   color: #fff;
 }
 
-/* GRID */
 .avaliacoes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
-/* CARD */
 .avaliacao-card {
-  background: linear-gradient(
-    to top,
-    rgba(122,60,255,0.15),
-    rgba(0,0,0,0.65)
-  );
+  background: linear-gradient(to top, rgba(122,60,255,0.15), rgba(0,0,0,0.65));
   border-radius: 16px;
   padding: 28px;
-  text-align: left;
   color: #fff;
 }
 
-.avaliacao-card p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-  color: #eaeaea;
-}
-
-.avaliacao-card strong {
-  display: block;
-  font-size: 14px;
-}
-
-.avaliacao-card span {
-  font-size: 13px;
-  color: #aaa;
-}
-
-/* ================= RODAPÉ ================= */
-
+/* ================= FOOTER ================= */
 .footer {
   background: #000;
   color: #fff;
@@ -331,42 +222,9 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 8%;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
-}
-
-.footer-brand h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-
-.footer-brand p {
-  color: #aaa;
-  line-height: 1.6;
-}
-
-.footer-links h4,
-.footer-contato h4 {
-  color: #2564eb;
-  margin-bottom: 14px;
-}
-
-.footer-links a {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  margin-bottom: 10px;
-}
-
-.footer-links a:hover {
-  color: #2564eb;
-}
-
-.footer-contato p {
-  color: #ccc;
-  margin-bottom: 10px;
 }
 
 .footer-bottom {
@@ -378,10 +236,46 @@ html, body {
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
+  .hero {
+    height: auto;
+    min-height: unset;
+    padding: 80px 16px;
+  }
+
+  .hero h1,
+  .hero h1 .highlight {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .motivos {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 16px;
+  }
+
+  .motivo img {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .avaliacoes-grid {
+    grid-template-columns: 1fr;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .sobre-container {
+    margin-right: 0;
+    padding: 0 16px;
   }
 }
